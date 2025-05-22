@@ -32,12 +32,16 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
+
+
 quarter=0.25
 dime=0.1
 nickle=0.05
 penny=0.01
 Money=0
 birr=0
+
+
 #Todo 1 :-print report
 def display_report():
     print(f"water : {resources['water']}ml")
@@ -81,7 +85,7 @@ while not go_head:
             continue
 
 
-
+#if user types to get latte
 
     elif user == "latte":
         if resources['water'] >= MENU["latte"]["ingredients"]['water'] and resources['coffee'] >= MENU["latte"]["ingredients"]['coffee']  :
@@ -103,6 +107,7 @@ while not go_head:
                 continue
 
 
+#if user wants cappuccino
     elif user == "cappuccino":
         if resources['water'] >= MENU["cappuccino"]["ingredients"]['water'] and resources['coffee'] >= MENU["cappuccino"]["ingredients"]['coffee'] :
             if resources['milk'] >= MENU["cappuccino"]["ingredients"]['milk']:
@@ -122,6 +127,14 @@ while not go_head:
                 print("sorry, the resourses is not availabile")
                 continue
 
+
+# if user wants  to quite
+    elif user =="off":
+        print("good bye every body every body")
+        go_head=True
+
+
+# if user wants to know the report
     elif user=='report':
         display_report()
 
